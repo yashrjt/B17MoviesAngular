@@ -1,0 +1,12 @@
+nav{
+    height:50px;
+    background-color: bisque;
+ }
+ ul{
+    display:flex;
+    justify-content: space-around;
+ }
+ 
+ li{
+    list-style: none
+ }

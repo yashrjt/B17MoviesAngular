@@ -1,0 +1,19 @@
+.section{
+    display:flex;
+    justify-content: space-between;
+}
+
+
+.section-left{
+width:500px;
+}
+
+.section-right{
+    width:1000px;
+    }
+
+ 
+ 
+ li{
+    list-style: none
+ }
