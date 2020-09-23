@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from 'src/app/authentication/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  userLogStatus:boolean;
+  constructor(private auth:AuthService,private router:Router) { }
 
   ngOnInit() {
+    this.auth.isLoggedInObservable.subscribe((res)=>{
+      this.userLogStatus=res;
+      console.log("HeaderComponent -> ngOnInit ->  this.userLogStatus",  this.userLogStatus)
+    })
   }
 
+
+  logoff(){
+  
+    this.auth.logout();
+
+  }
 }

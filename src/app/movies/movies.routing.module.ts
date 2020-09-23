@@ -5,6 +5,9 @@ import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { MoviesComponent } from './movies/movies.component';
 
 
+// localhost:4200/movies
+// localhost:4200/movies/create-movie
+// localhost:4200/movies/search-movie
 
 const routes: Routes = [
   {path:'',component:MoviesComponent,
