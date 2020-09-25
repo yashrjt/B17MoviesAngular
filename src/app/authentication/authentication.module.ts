@@ -4,7 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule}  from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS}  from '@angular/common/http';
+import {JwtInterceptor}  from './jwt.service';
 
 @NgModule({
   declarations: [LoginComponent, SignupComponent],
@@ -14,6 +15,7 @@ import {HttpClientModule}  from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  exports:[LoginComponent, SignupComponent]
+  exports:[LoginComponent, SignupComponent],
+  providers:[{provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true}]
 })
 export class AuthenticationModule { }

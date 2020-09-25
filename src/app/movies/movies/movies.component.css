@@ -1,16 +1,19 @@
 .section{
-    display:flex;
-    justify-content: space-between;
+    display:grid;
+    grid-template-columns: 200px 1000px;
+    grid-gap:30px;
 }
 
 
 .section-left{
-width:500px;
+
+border:solid 1px black;
+
 }
 
 .section-right{
-    width:1000px;
-    }
+    border:solid 1px black;
+}
 
  
  

@@ -13,17 +13,28 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AuthService {
 
 
+  
   constructor(private http:HttpClient) { }
 
+  //JS--truthy true,1 falsy  false,0,undefined,null
 
-  isLoggedIn:BehaviorSubject<boolean>=new BehaviorSubject(false);
+  isLoggedIn:BehaviorSubject<boolean>=new BehaviorSubject(this.checkToken());
 
   isLoggedInObservable:Observable<boolean>= this.isLoggedIn.asObservable();
   
   
   //post,get,put,delete
 
-
+  checkToken(){
+    let token= localStorage.getItem('token');
+    if(!!token){
+      return true;
+    }
+    else{
+      return  false;
+    }
+    
+  }
 
   login(loginObj){
     

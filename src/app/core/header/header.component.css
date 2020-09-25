@@ -2,7 +2,10 @@ nav{
     height:50px;
     background-color: bisque;
  }
- ul{
+ .auth{
+    width:300px;
+ }
+ ul,.auth{
     display:flex;
     justify-content: space-around;
  }
@@ -10,3 +13,4 @@ nav{
  li{
     list-style: none
  }
+

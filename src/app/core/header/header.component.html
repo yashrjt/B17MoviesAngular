@@ -3,7 +3,7 @@
     <ul>
         <li> <a routerLink="/home">Home</a></li>
         <li> <a routerLink="/movies">Movies</a> </li>
-        <div *ngIf="!userLogStatus;else logout">
+        <div class="auth" *ngIf="!userLogStatus;else logout">
             <li> <a routerLink="/login">Login</a></li>
             <li> <a routerLink="/signup">SignUp</a></li>
         </div>

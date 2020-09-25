@@ -12,6 +12,30 @@
     
     </div>
     <div class="section-right">
+       <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Director</th>
+                        <th>Approval Rating</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <ng-container *ngFor="let item of moviesList">
+                        <tr>
+                            <td> <a [routerLink]="['/movies/moviedetail/',item.movieid]" >{{item.title}}</a></td>
+                            <td>{{item.director}}</td>
+                            <td>{{item.approvalRating |percent}}</td>
+                            <td>{{item.category |uppercase}}</td>
+                            <td>{{item.price | currency}}</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+
+       </table>
        <router-outlet></router-outlet>
     </div>
 </div>
