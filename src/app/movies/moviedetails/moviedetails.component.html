@@ -1,1 +1,10 @@
-<p>moviedetails works!</p>
+<section>
+    <p>Safe navigation operator</p>
+    <p>{{moviesDetail?.title}}</p>
+    <p>{{moviesDetail?.description}}</p>
+    <p>{{moviesDetail?.category}}<</p>
+    <p>Movie Reviews</p>
+        <ng-container *ngFor="let item of moviesDetail?.reviews">
+            <p>{{item.review}}</p>
+        </ng-container>
+</section>

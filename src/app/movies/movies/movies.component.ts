@@ -23,4 +23,16 @@ export class MoviesComponent implements OnInit {
       })
   }
 
+
+  editMovie(movieid){
+    this.movies.updateMovies(movieid,{}).subscribe((res)=>{
+    console.log("MoviesComponent -> editMovie -> res", res)
+      
+    },
+    (err)=>{
+      console.log("MoviesComponent -> ngOnInit -> err", err)
+        
+      }
+    )
+  }
 }

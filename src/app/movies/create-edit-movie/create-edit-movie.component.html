@@ -1,1 +1,67 @@
-<p>create-edit-movie works!</p>
+<form [formGroup]="movieForm" (ngSubmit)="movieSubmit()">
+        
+    
+        <div class="form-group">
+                <label for="movieid">Movieid</label>
+                <input type="text" class="form-control" id="movieid"  formControlName="movieid" aria-describedby="emailHelp">
+        </div>
+      
+        <div class="form-group">
+        <label for="director">Director</label>
+        <input type="text" class="form-control" id="director" formControlName="director">
+        </div>
+        
+        <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" formControlName="description">
+        </div>
+
+              
+        
+        <div class="form-group">
+          <label for="imageUrl">ImageUrl</label>
+          <input type="text" class="form-control" id="imageUrl" aria-describedby="emailHelp" formControlName="imageurl">
+         </div>
+
+       
+
+        <div class="form-group">
+            <label for="mpaa">MPAA</label>
+            <input type="text" class="form-control" id="mpaa" aria-describedby="emailHelp" formControlName="mpaa">
+        </div>
+
+        <div class="form-group">
+        <label for="releaseDate">RelaseDate</label>
+        <input type="text" class="form-control" id="releaseDate" formControlName="releaseDate">
+        </div>
+
+
+        <div class="form-group">
+                <label for="title"> Title</label>
+                <input type="text" class="form-control" id="title" aria-describedby="emailHelp" formControlName="title">
+            </div>
+    
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="price" formControlName="price">
+        </div>
+    
+
+        <div class="form-group">
+                <label for="starRating">StarRating</label>
+                <input type="text" class="form-control" id="starRating" formControlName="starRating">
+                </div>
+        
+        
+        <div class="form-group">
+                <label for="approvalRating"> ApprovalRating</label>
+                <input type="text" class="form-control" id="approvalRating" aria-describedby="emailHelp" formControlName="approvalRating">
+            </div>
+    
+        <div class="form-group">
+            <label for="category">category</label>
+            <input type="text" class="form-control" id="category" formControlName="category">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -15,9 +15,9 @@ export class MoviesService {
   constructor(private http:HttpClient) { }
 
   getAllMovies(){
-    let token=localStorage.getItem('token');
+   
    return this.http.get("http://localhost:8080/api/movies/getAllMovies",
-                              {headers: new HttpHeaders({'Content-Type':  'application/json','x-access-token':token})})
+                              {headers: new HttpHeaders({'Content-Type':  'application/json'})})
     .pipe(
       map((res)=>{
       console.log("MoviesService -> getAllMovies -> res", res)
@@ -30,14 +30,24 @@ export class MoviesService {
   }
 
 
-  getMovieById(){
-    
+  getMovieById(movieid){
+    return this.http.get(`http://localhost:8080/api/movies/getMovie/${movieid}`,
+                              {headers: new HttpHeaders({'Content-Type':  'application/json'})})
+    .pipe(
+      map((res)=>{
+     
+        return res;
+      }),
+      catchError((err)=>{
+          throw err;
+      })
+    )
   }
 
 
-  createMovies(){
+  createMovies(movie){
    
-    return this.http.post("http://localhost:8080/api/movies/getAllMovies",
+    return this.http.post("http://localhost:8080/api/movies/createMovie",movie,
                                {headers: new HttpHeaders({'Content-Type':  'application/json'})})
      .pipe(
        map((res)=>{
@@ -50,8 +60,18 @@ export class MoviesService {
      )
   }
 
-  updateMovies(){
-
+  updateMovies(movieid,moviebody){
+    return this.http.patch(`http://localhost:8080/api/movies/updateMovie/${movieid}`,moviebody,
+          {headers: new HttpHeaders({'Content-Type':  'application/json'})})
+      .pipe(
+      map((res)=>{
+      //  console.log("MoviesService -> getAllMovies -> res", res)
+      return res;
+      }),
+      catchError((err)=>{
+      throw err;
+      })
+)
   }
 
 

@@ -20,6 +20,8 @@
                         <th>Approval Rating</th>
                         <th>Category</th>
                         <th>Price</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -31,6 +33,8 @@
                             <td>{{item.approvalRating |percent}}</td>
                             <td>{{item.category |uppercase}}</td>
                             <td>{{item.price | currency}}</td>
+                            <td [routerLink]="['/movies/edit-movie/',item.movieid]" routerLinkActive="router-link-active" ><button (click)="editMovie(item.movieid)">Edit</button></td>
+                            <td><button>Delete</button></td>
                         </tr>
                     </ng-container>
                 </tbody>

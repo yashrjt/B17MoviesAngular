@@ -11,14 +11,14 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 // localhost:4200/movies/search-movie
 
 const routes: Routes = [
-  {path:'',component:MoviesComponent,
-   children:[
+  {path:'',component:MoviesComponent},
+   
     {path:'create-movie',component:CreateEditMovieComponent},
     {path:'search-movie',component:SearchMovieComponent},
   
-  ]},
-  {path:'moviedetail/:id',component:MoviedetailsComponent}
- 
+  
+  {path:'moviedetail/:id',component:MoviedetailsComponent},
+  {path:'edit-movie/:id',component:CreateEditMovieComponent},
 ];
 
 @NgModule({

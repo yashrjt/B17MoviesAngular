@@ -7,13 +7,16 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
 
 import {MoviesRoutingModule} from './movies.routing.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [MoviesComponent, CreateEditMovieComponent, MoviedetailsComponent, SearchMovieComponent],
   imports: [
     CommonModule,
     RouterModule,
-    MoviesRoutingModule
+    MoviesRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports:[MoviesComponent, CreateEditMovieComponent, MoviedetailsComponent, SearchMovieComponent]
 })

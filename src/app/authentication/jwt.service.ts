@@ -15,7 +15,7 @@ export class JwtInterceptor implements HttpInterceptor {
     let cloneReq=req.clone({
       headers:req.headers.set('x-access-token',token)
     })
-    console.log("JwtInterceptor -> intercept -> cloneReq", cloneReq)
+ 
     return next.handle(cloneReq);
   }
   else{
