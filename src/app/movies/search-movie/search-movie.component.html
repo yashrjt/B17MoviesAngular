@@ -1,1 +1,18 @@
-<p>search-movie works!</p>
+<form>
+    <div class="form-group" [formGroup]="searchForm">
+      <label for="exampleSearch">Search Movie</label>
+      <input type="text" class="form-control" id="exampleSearch" aria-describedby="emailHelp" 
+            placeholder="Please enter Movie Name" formControlName="searchControl">
+    </div>
+   
+</form>
+
+<ng-container *ngFor="let item of searchResponse ;let i=index">
+<h3>Movie {{i+1}}</h3>
+<h4>Movie Title</h4>
+<p>{{item.title}}</p>
+<h5>Movie Description</h5>
+<p>{{item.description}}</p>
+</ng-container>
+<!-- <app-search-response [response]="searchResponse"></app-search-response> -->
+

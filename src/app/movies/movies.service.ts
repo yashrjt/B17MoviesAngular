@@ -75,17 +75,37 @@ export class MoviesService {
   }
 
 
-  deleteMovies(){
+  deleteMovies(movieid){
     
-
+    return this.http.delete(`http://localhost:8080/api/movies/deleteMovie/${movieid}`,
+    {headers: new HttpHeaders({'Content-Type':  'application/json'})})
+          .pipe(
+          map((res)=>{
+          //  console.log("MoviesService -> getAllMovies -> res", res)
+          return res;
+          }),
+          catchError((err)=>{
+          throw err;
+          })
+)
 
 
   }
 
 
 
-  searchMovie(){
-
+  searchMovie(query){
+    return this.http.get(`http://localhost:8080/api/movies/search/?searchValue=${query}`,
+    {headers: new HttpHeaders({'Content-Type':  'application/json'})})
+          .pipe(
+          map((res)=>{
+          //  console.log("MoviesService -> getAllMovies -> res", res)
+          return res;
+          }),
+          catchError((err)=>{
+          throw err;
+          })
+)
   }
 
 }

@@ -14,6 +14,11 @@ export class MoviesComponent implements OnInit {
   constructor(private movies:MoviesService) { }
 
   ngOnInit() {
+   this.getAllMovies();
+  }
+
+
+  getAllMovies(){
     this.movies.getAllMovies().subscribe((res)=>{
       console.log("MoviesComponent -> ngOnInit -> res", res)
          this.moviesList=res['data']['result'];
@@ -22,8 +27,7 @@ export class MoviesComponent implements OnInit {
         
       })
   }
-
-
+  
   editMovie(movieid){
     this.movies.updateMovies(movieid,{}).subscribe((res)=>{
     console.log("MoviesComponent -> editMovie -> res", res)
@@ -34,5 +38,17 @@ export class MoviesComponent implements OnInit {
         
       }
     )
+  }
+
+
+  deleteMovie(movieid){
+    this.movies.deleteMovies(movieid).subscribe((res)=>{
+      console.log("MoviesComponent -> deleteMovies -> res", res);
+      this.getAllMovies();
+    }),
+    (err)=>{
+      console.log("MoviesComponent -> deleteMovies -> err", err)
+        
+      }
   }
 }

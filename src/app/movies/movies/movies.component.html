@@ -34,7 +34,7 @@
                             <td>{{item.category |uppercase}}</td>
                             <td>{{item.price | currency}}</td>
                             <td [routerLink]="['/movies/edit-movie/',item.movieid]" routerLinkActive="router-link-active" ><button (click)="editMovie(item.movieid)">Edit</button></td>
-                            <td><button>Delete</button></td>
+                            <td><button (click)="deleteMovie(item.movieid)">Delete</button></td>
                         </tr>
                     </ng-container>
                 </tbody>
